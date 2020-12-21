@@ -24,21 +24,18 @@ function Search() {
 
   return (
     <div>
-      <section>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Search:
-            <input
-              type="text"
-              placeholder="Search word"
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-            />
-          </label>
-          <input type="submit" value="Submit" />
+      <section className="search">
+        <form onSubmit={handleSubmit} className="search__form">
+          <input
+            type="text"
+            placeholder="Search word"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+          <input type="submit" value="Submit" className="search__submit" />
         </form>
       </section>
-      <ResultsCardGrid isLoading={isLoading} result={result}/>
+      <ResultsCardGrid isLoading={isLoading} result={result} />
     </div>
   );
 }

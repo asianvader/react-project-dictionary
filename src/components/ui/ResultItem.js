@@ -3,7 +3,7 @@ import React from "react";
 function ResultItem({ item }) {
   console.log(item);
   return (
-    <div>
+    <div className="card__item">
       <h1>
         {item.meta.id} | {item.hwi.hw}
       </h1>

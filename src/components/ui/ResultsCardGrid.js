@@ -3,7 +3,7 @@ import ResultItem from "./ResultItem";
 
 function ResultsCardGrid({ isLoading, result }) {
   return isLoading ? null : (
-    <section>
+    <section className="cards">
       {result.map((item) => (
         <ResultItem key={item.meta.uuid} item={item}></ResultItem>
       ))}
