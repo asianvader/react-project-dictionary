@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import ResultsCardGrid from "./ResultsCardGrid";
 
 function Search() {
   const [text, setText] = useState("");
   const [result, setResult] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const mwApiUrl = `https://dictionaryapi.com/api/v3/references/sd2/json/${text}?key=${process.env.REACT_APP_MW_API_KEY}`;
 
@@ -14,10 +16,12 @@ function Search() {
       const data = await response.json();
       console.log(data);
       setResult(data);
+    //   console.log(result[0].meta.id)
+      setIsLoading(false);
     };
     fetchData();
     setText("");
-    console.log("result", result);
+    // console.log("result", result);
   };
 
   return (
@@ -36,6 +40,7 @@ function Search() {
           <input type="submit" value="Submit" />
         </form>
       </section>
+      <ResultsCardGrid isLoading={isLoading} result={result}/>
     </div>
   );
 }
