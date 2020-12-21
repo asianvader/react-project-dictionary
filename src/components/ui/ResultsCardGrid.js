@@ -1,10 +1,12 @@
 import React from "react";
+import ResultItem from "./ResultItem";
 
 function ResultsCardGrid({ isLoading, result }) {
   return isLoading ? null : (
     <section>
-      {result[0].shortdef}
-      {result[0].meta.uuid}
+      {result.map((item) => (
+        <ResultItem key={item.meta.uuid} item={item}></ResultItem>
+      ))}
     </section>
   );
 }

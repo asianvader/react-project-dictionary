@@ -10,18 +10,16 @@ function Search() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Word searching is ${text}`);
     const fetchData = async () => {
       const response = await fetch(mwApiUrl);
       const data = await response.json();
       console.log(data);
       setResult(data);
-    //   console.log(result[0].meta.id)
       setIsLoading(false);
     };
     fetchData();
     setText("");
-    // console.log("result", result);
+    setIsLoading(true);
   };
 
   return (
