@@ -81,3 +81,27 @@ input[type="text"] {
   list-style: none;
   padding-bottom: 10px;
 }
+
+.error {
+  display: grid;
+}
+
+.error__item {
+  margin-top: 3rem;
+  display: grid;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: 100%;
+  gap: 1rem;
+  background-color: rgb(58, 14, 99);
+  color: whitesmoke;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.error__item li {
+  list-style: none;
+  /* padding-bottom: 10px; */
+  text-align: center;
+}
